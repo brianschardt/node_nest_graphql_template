@@ -1,0 +1,38 @@
+type User {
+  userKey: ID!
+  firstName: String
+  lastName: String
+  email: String!
+  createdAt: Date!
+}
+
+type Auth {
+  type: String!
+  token: String!
+}
+
+type UserCreateResponse {
+  user: User
+  error: Error
+}
+
+input UserCreateInput {
+  email: String!
+  password: String!
+  firstName: String!
+  lastName: String!
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+type Query {
+  login(input: LoginInput): Auth
+  whoami: User
+}
+
+type Mutation {
+  userCreate(input: UserCreateInput): UserCreateResponse
+}
