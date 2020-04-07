@@ -11,8 +11,8 @@ import { ENV } from '../shared/configs';
       username: ENV.DATABASE_USERNAME,
       password: ENV.DATABASE_PASSWORD,
       database: ENV.DATABASE_NAME,
-      synchronize: true,
-      dropSchema: true,
+      synchronize: false,
+      dropSchema: false,
       logging: true,
       entities: [
         __dirname + '/entities/*.entity.*',
